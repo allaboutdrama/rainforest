@@ -1,2 +1,7 @@
 <h1>Products#index</h1>
 
+<% @products.each do |producto|   %>
+  <ul>
+    <li><%= producto[:name] %> <%= link_to "View", "products/#{producto[:id]}"  %></li>
+  </ul>
+  <% end %>

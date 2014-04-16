@@ -1,1 +1,17 @@
 <h1>Products#show</h1>
+
+
+<%= link_to("Home", products_path) %>
+
+
+<p>
+<%= @product.name %> --- <%= @product.description %> --- CAN$ <%= @product.price_in_cents %>
+</p>
+
+<p>
+<%= link_to "Edit", edit_product_path %><br>
+</p>
+
+<p>
+<%= link_to "Delete", @product, :confirm=> "Are you sure?", :method => :delete %>
+</p>
