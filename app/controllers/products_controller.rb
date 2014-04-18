@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  
+ before_filter :ensure_logged_in, :only => [:edit, :destroy]
+
   def index
     @products = Product.all
   end
@@ -45,9 +46,6 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path  
   end
-
-
-
 
 private
 def product_params
